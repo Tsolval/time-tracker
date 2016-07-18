@@ -45,9 +45,15 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-validation')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-groovy-templates')
 	runtime('com.h2database:h2')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// the following line is for development use only
+	compile('org.springframework.boot:spring-boot-devtools')
 }
+// the following is used for development (live reload)
+bootRun { addResources = true }
 
 eclipse {
 	classpath {
