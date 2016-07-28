@@ -11,20 +11,29 @@ import javax.persistence.Id
  * @author tsolval
  */
 @Entity
-class JobType {
+class JobType implements Serializable {
+
+	/** TODO enter comment for serialVersionUID */
+	private static final long serialVersionUID = -7590298912096048469L
+
 	/** The job type identifier. */
 	@Id
-	String type
+	String id
 	/** A description of this type of work. */
 	String description
 	/** The total amount of time taken by all jobs of this type. */
-	Duration totalTime
+	Long totalTime
 	/** The total number of units of work of this type completed. */
 	Integer totalUnits
 	/** The total time / the total units gives the rate.  TODO make this a method, no need for a field. */
 	Float totalRate
 	/** The longest amount of time that this activity has taken. */
-	Duration maximumDuration
+	Long maximumDuration
 	/** The shortest amount of time that this activity has taken. */
-	Duration minimumDuration
+	Long minimumDuration
+
+	@Override
+	public String toString() {
+		return "JobType [id=$id, description=$description]"
+	}
 }

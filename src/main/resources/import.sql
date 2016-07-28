@@ -1,0 +1,2 @@
+insert into job_type values ('newJobType', 'Job Type for Testing', 0, 0, 0, 0, 0);
+insert into job (id, type_id, date, description, estimated_time, estimated_units, actual_time, actual_units, actual_rate, is_complete) values ( 0, 'newJobType', CURRENT_DATE(), 'New Job for Testing', 1, 1, 0, 0, 0, false), (1, 'newJobType', CURRENT_DATE(), 'Another Job for Testing', 1, 1, 0, 0, 0, false);
