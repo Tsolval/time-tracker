@@ -23,7 +23,7 @@ public class TimeTrackerApplication {
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(TimeTrackerApplication.class, args);
-		String url = "http://localhost:8080/";
+		String url = "http://localhost:8080/job";
 		if (Desktop.isDesktopSupported()) {
 			Desktop desktop = Desktop.getDesktop();
 			try {

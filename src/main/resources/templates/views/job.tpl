@@ -3,17 +3,29 @@ pageTitle: 'Spring Boot - Groovy templates example with layout',
 mainBody: contents {
    div(class:"text"){
 	  p("This is an application using Spring Boot $bootVersion and Groovy Templates $groovyVersion")
-	  table(class:"jobTable"){
+	  table(class:"w3-table-all w3-card-2"){
+		  thead(){
+			  tr(class: "w3-blue"){
+				  th( "Type")
+				  th( "Description")
+				  th( "Est. Time")
+				  th( "Est. Units")
+				  th( "Act. Time")
+				  th( "Act. Units")
+				  th( "Act. Rate")
+				  th( "Complete")
+			  }
+		  }
 		 jobs.each{ job ->
-		  tr(class:"jobTableRow"){
-			td(class: "jobTableType", "$job.type.id")
-			td(class: "jobTableDesc", "$job.description")
-			td(class: "jobTableTime", "$job.estimatedTime") 
-			td(class: "jobTableUnit", "$job.estimatedUnits") 
-			td(class: "jobTableTime", "$job.actualTime") 
-			td(class: "jobTableUnit", "$job.actualUnits") 
-			td(class: "jobTableRate", "$job.actualRate") 
-			td(class: "jobTableFini", "$job.isComplete") 
+		  tr(){
+			td( "$job.type.id")
+			td( "$job.description")
+			td( "$job.estimatedTime") 
+			td( "$job.estimatedUnits") 
+			td( "$job.actualTime") 
+			td( "$job.actualUnits") 
+			td( "$job.actualRate") 
+			td( "$job.isComplete") 
 		 }}
 	  }
    }
